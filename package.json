@@ -2,13 +2,32 @@
   "name": "my-admin-app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:9999",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "admin-lte": "^4.0.0-beta2",
+    "axios": "^1.7.7",
+    "browserify-zlib": "^0.2.0",
+    "chart.js": "^4.4.6",
+    "datatables.net": "^2.1.8",
+    "datatables.net-buttons": "^3.2.0",
+    "datatables.net-buttons-dt": "^3.2.0",
+    "datatables.net-dt": "^2.1.8",
+    "https-browserify": "^1.0.0",
+    "jquery": "^3.7.1",
+    "moment": "^2.30.1",
+    "overlayscrollbars": "^2.10.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "url": "^0.11.4",
+    "util": "^0.12.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -34,5 +53,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9"
   }
 }
