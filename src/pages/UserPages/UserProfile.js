@@ -13,19 +13,23 @@ const UserProfile = () => {
     const PerPage = 10; // Số người dùng mỗi trang
     const [showModalConfirm, setShowModalConfirm] = useState(false);
     const [showModalConfirm2, setShowModalConfirm2] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+
+    const fetchUser = async () => {
+        try {
+            const data = await getUserById(id);
+            setUser(data.data); // Lưu thông tin người dùng
+            setOrders(data.data.orders || []); // Lưu danh sách orders
+            setError(null); // Xóa lỗi (nếu có từ trước)
+        } catch (err) {
+            console.error("Lỗi khi lấy thông tin chi tiết người dùng:", err);
+            setError("Không thể tải thông tin người dùng."); // Lưu trạng thái lỗi
+        }
+    };
 
     useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                const data = await getUserById(id);
-                setUser(data.data); // Lưu thông tin người dùng
-                setOrders(data.data.orders || []); // Lưu danh sách orders
-                setError(null); // Xóa lỗi (nếu có từ trước)
-            } catch (err) {
-                console.error("Lỗi khi lấy thông tin chi tiết người dùng:", err);
-                setError("Không thể tải thông tin người dùng."); // Lưu trạng thái lỗi
-            }
-        };
         fetchUser();
     }, [id]);
 
@@ -102,9 +106,33 @@ const UserProfile = () => {
 
     const isStatusPending2 = user && user.isDeleted;
 
+    useEffect(() => {
+        // Kiểm tra token trong localStorage
+        const token = localStorage.getItem("authToken");
+        setIsAuthenticated(!!token); // Nếu token tồn tại, trạng thái là đã đăng nhập
+
+        // Mô phỏng thời gian tải (500ms)
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 500);
+    }, []);
+    if (isLoading) {
+        return (
+            <div className="preloader flex-column justify-content-center align-items-center">
+                <img
+                    className="animation__wobble"
+                    src="../dist/img/AdminLTELogo.png"
+                    alt="AdminLTELogo"
+                    height="60"
+                    width="60"
+                />
+            </div>
+        );
+    }
+
     return (
 
-        <div className="content-wrapper elevation-5"
+        <div className="content-wrapper elevation-3"
             style={{
                 marginLeft: "280px",
                 marginTop: "100px",

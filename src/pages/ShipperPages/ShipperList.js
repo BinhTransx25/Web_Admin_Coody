@@ -73,7 +73,7 @@ const ShipperList = () => {
 
 
   return (
-    <div className="content-wrapper elevation-5 "
+    <div className="content-wrapper elevation-3"
       style={{
         marginLeft: "280px",
         marginTop: "100px",

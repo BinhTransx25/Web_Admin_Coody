@@ -68,7 +68,7 @@ const UserList = () => {
 
   return (
     <div
-      className="content-wrapper elevation-5"
+      className="content-wrapper elevation-3"
       style={{
         marginLeft: "280px",
         marginTop: "100px",
@@ -153,6 +153,7 @@ const UserList = () => {
 
                             <td>
                               <div className="btn-group">
+
                                 <button type="button"
                                   class="btn btn-secondary"
                                   style={{

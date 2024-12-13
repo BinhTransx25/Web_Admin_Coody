@@ -320,7 +320,7 @@ const UserProfile = () => {
                                         </button>
                                         {/* Nút mở modal */}
                                         <button
-                                            className="mt-3"
+                                            className="mt-3 ml-3"
                                             style={{
                                                 borderRadius: '18px',
                                                 boxShadow: isVerificationPending
