@@ -135,7 +135,7 @@ const UserList = () => {
                                 >
                                   Hoạt động
                                 </span>
-                              ) : user.status == 'Tài khoản bị khóa'(
+                              ) : (
                                 <span
                                   style={{
                                     backgroundColor: '#F95454',
@@ -149,6 +149,7 @@ const UserList = () => {
                                 </span>
                               )
                               }
+
                             </td>
 
                             <td>
@@ -171,8 +172,10 @@ const UserList = () => {
 
                               </div>
                             </td>
+
                           </tr>
                         ))
+
                       ) : (
                         <tr>
                           <td colSpan="5">Không có người dùng nào</td>

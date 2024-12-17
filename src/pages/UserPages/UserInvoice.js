@@ -35,19 +35,22 @@ const UserInvoice = () => {
     if (!order) return <div>Loading...</div>; // Hiển thị trạng thái chờ
 
     return (
-        <div className="content-wrapper">
+        <div className="content-wrapper elevation-5"
+            style={{
+                marginLeft: "280px",
+                marginTop: "100px",
+                marginRight: "18px",
+                borderRadius: "18px",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                backgroundColor: "white"
+            }}
+        >
             {/* Content Header (Page header) */}
             <div className="content-header">
                 <div className="container-fluid">
                     <div className="row mb-2">
                         <div className="col-sm-6">
-                            <h1 className="m-0">Hóa Đơn Chi Tiết</h1>
-                        </div>
-                        <div className="col-sm-6">
-                            <ol className="breadcrumb float-sm-right">
-                                <li className="breadcrumb-item"><a href="#">Home</a></li>
-                                <li className="breadcrumb-item active">UserInvoice</li>
-                            </ol>
+                            <h1 className="m-0">Hóa đơn chi tiết</h1>
                         </div>
                     </div>
                 </div>
@@ -66,7 +69,13 @@ const UserInvoice = () => {
                             </div>
 
                             {/* Main content */}
-                            <div className="invoice p-3 mb-3">
+                            <div className="invoice p-3 mb-3"
+                                style={{
+                                    borderRadius: "18px",
+                                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                                    backgroundColor: "white"
+                                }}
+                            >
                                 {/* Title row */}
                                 <div className="row">
                                     <div className="col-12">
@@ -118,7 +127,7 @@ const UserInvoice = () => {
                                 {/* Table row */}
                                 <div className="row">
                                     <div className="col-12 table-responsive">
-                                        <table className="table table-striped">
+                                        <table className="table ">
                                             <thead>
                                                 <tr>
                                                     <th style={{ width: "20%", paddingLeft: 30 }}>#</th>
@@ -153,7 +162,7 @@ const UserInvoice = () => {
                                     </div>
 
                                     <div className="col-6">
-                                    <p className="lead">Ngày xuất hóa đơn: {moment().format('DD-MM-YYYY')}</p>
+                                        <p className="lead">Ngày xuất hóa đơn: {moment().format('DD-MM-YYYY')}</p>
 
 
                                         <div className="table-responsive">
@@ -181,29 +190,37 @@ const UserInvoice = () => {
                                         <button
                                             className="btn btn-secondary mr-1"
                                             onClick={() => navigate(-1)}
+                                            style={{
+
+                                                color: 'white',
+                                                borderRadius: '12px',
+
+                                            }}
                                         >
                                             Quay lại
                                         </button>
+
                                         <a
                                             href="invoice-print.html"
                                             rel="noopener"
                                             target="_blank"
                                             className="btn btn-default"
+                                            style={{
+                                                borderRadius: '12px',
+                                            }}
                                         >
                                             <i className="fas fa-print"></i> Print
                                         </a>
 
-                                        <button type="button" className="btn btn-success float-right">
-                                            <i className="far fa-credit-card"></i> Submit Payment
-                                        </button>
 
                                         <button
                                             type="button"
                                             className="btn btn-primary float-right"
-                                            style={{ marginRight: "5px" }}
+                                            style={{ marginRight: "5px", borderRadius: '12px', }}
                                         >
                                             <i className="fas fa-download"></i> Generate PDF
                                         </button>
+                                        
                                     </div>
                                 </div>
                             </div>

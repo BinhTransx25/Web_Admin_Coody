@@ -36,7 +36,7 @@ export const getOrderByShopOwnerId = async (shopId) => {
 // Lấy thông tin người dùng theo ID
 export const getProductByShopOwnerId = async (shopId) => {
     try {
-        const response = await api.get(`/products/shopOwner/${shopId}`);
+        const response = await api.get(`/products/shopOwner/normal/${shopId}`);
         return response.data;
     } catch (error) {
         console.error('Error fetching user details:', error);
